@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
         return -1;
     }
     else {
-        for (int i = 0; argv[1][i]; ++i) {
+        for (int i = 0; argv[1][i] != '\0'; ++i) {
             argv[1][i] = std::tolower(argv[1][i]);
         }
         const int argumentN = str_to_num(argv[1]);
