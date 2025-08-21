@@ -2,7 +2,7 @@
 #include <typeinfo>
 #include <vector>
 
-int str_to_num(std::string str) {
+int str_to_num(const std::string str) {
     int res {}; // 0
     for (char c : str) {
         c = static_cast <int> (c);
@@ -16,7 +16,7 @@ void CheckInfo (T var, std::string input) {
     std::cout << "And default size of " << input << " is: " << sizeof(var) << std::endl;
 }
 int main(int argc, char *argv[]) {
-    std::vector <std::string> types = {"int", "float", "double", "short", "long", "long-long", "unsigned", "signed", "bool", "std::byte", "size_t", "uint8_t", "uint16_t", "uint32_t", "uint64_t", "std::string", "char", "char16_t", "char32_t", "wchar_t"};
+    std::vector <std::string> types = {"int", "float", "double", "short", "long", "long-long", "unsigned", "signed", "bool", "std::byte", "size_t", "int8_t", "int16_t", "int32_t" "uint8_t", "uint16_t", "uint32_t", "uint64_t", "std::string", "char", "char16_t", "char32_t", "wchar_t"};
     if (argc > 2 || argc == 1) {
         std::cout << "Usage: " << argv[0] << " <data type> \n";
         std::cout << "Avaible types of data: \n";
@@ -93,6 +93,21 @@ int main(int argc, char *argv[]) {
             }
             case 654: {
                 size_t type {}; 
+                CheckInfo(type, argv[1]);
+                break;
+            }
+            case 598: {
+                int8_t type{};
+                CheckInfo(type, argv[1]);
+                break;
+            }
+            case 645: {
+                int16_t type{};
+                CheckInfo(type, argv[1]);
+                break;
+            }
+            case 643: {
+                int32_t type{};
                 CheckInfo(type, argv[1]);
                 break;
             }
